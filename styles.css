@@ -1,0 +1,535 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0b12;
+  color: #f5f5fa;
+}
+
+/* ENCABEZADO */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 7%;
+  background: #11111c;
+  border-bottom: 1px solid #292938;
+  gap: 20px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marca h1 {
+  font-size: 29px;
+  letter-spacing: 3px;
+}
+
+.marca h1 span {
+  color: #f5c542;
+}
+
+.simbolo {
+  color: #f5c542;
+  font-size: 42px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+nav a {
+  color: #dedeea;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f5c542;
+}
+
+/* PORTADA */
+
+.portada {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  padding: 70px 8%;
+  background:
+    radial-gradient(ellipse at 85% 40%, #25204a 0%, transparent 50%),
+    #0b0b12;
+}
+
+.etiqueta,
+.subtitulo {
+  color: #f5c542;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.textoPortada h2 {
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.12;
+  margin-bottom: 22px;
+}
+
+.textoPortada h2 span {
+  color: #f5c542;
+}
+
+.textoPortada > p:not(.etiqueta) {
+  color: #b6b6c9;
+  line-height: 1.8;
+  max-width: 430px;
+  margin-bottom: 30px;
+}
+
+.botonPortada {
+  display: inline-block;
+  padding: 15px 22px;
+  background: #f5c542;
+  color: #17130a;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.botonPortada:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+}
+
+.imagenPortada {
+  position: relative;
+  min-width: 0;
+}
+
+.imagenPortada img {
+  display: block;
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid #46405e;
+}
+
+.sello {
+  position: absolute;
+  right: -15px;
+  bottom: -18px;
+  padding: 20px;
+  background: #8b5cf6;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* PRODUCTOS */
+
+#productos,
+#oferta {
+  padding: 45px 7%;
+  margin: 25px auto;
+  scroll-margin-top: 20px;
+}
+
+#productos > .subtitulo,
+#productos > h2,
+.descripcion {
+  text-align: center;
+}
+
+#productos h2,
+.encabezadoOferta h2 {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+
+.descripcion {
+  color: #aaaabe;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.grillaProductos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.producto {
+  min-width: 0;
+  overflow: hidden;
+  background: #141420;
+  border: 1px solid #29293b;
+  border-radius: 12px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.producto:hover {
+  transform: translateY(-7px);
+}
+
+.relojDorado:hover {
+  border-color: #f5c542;
+}
+
+.relojAzul:hover {
+  border-color: #32c5ff;
+}
+
+.relojMorado:hover {
+  border-color: #bd75ff;
+}
+
+.imagenProducto {
+  position: relative;
+  height: 240px;
+  padding: 12px;
+  background: #1a1928;
+}
+
+.relojDorado .imagenProducto {
+  background: linear-gradient(145deg, #342b16, #18151d);
+}
+
+.relojAzul .imagenProducto {
+  background: linear-gradient(145deg, #102b48, #171624);
+}
+
+.relojMorado .imagenProducto {
+  background: linear-gradient(145deg, #322044, #171624);
+}
+
+.imagenProducto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.etiquetaProducto {
+  position: absolute;
+  z-index: 1;
+  top: 22px;
+  left: 22px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: #f5c542;
+  color: #17130a;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.relojAzul .etiquetaProducto {
+  background: #32c5ff;
+}
+
+.relojMorado .etiquetaProducto {
+  background: #bd75ff;
+  color: #170d22;
+}
+
+.infoProducto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 22px;
+}
+
+.categoria {
+  color: #aaaabe;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.infoProducto h3 {
+  font-size: 22px;
+}
+
+.precio {
+  color: #f5c542;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.relojAzul .precio {
+  color: #32c5ff;
+}
+
+.relojMorado .precio {
+  color: #bd75ff;
+}
+
+.infoProducto a {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  background: #242437;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.infoProducto a:hover {
+  background: #383850;
+}
+
+/* OFERTA */
+
+.encabezadoOferta {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tarjetaOferta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+  padding: 25px;
+  background: linear-gradient(120deg, #171626, #211932);
+  border: 1px solid #54406d;
+  border-radius: 15px;
+}
+
+.imagenOferta {
+  position: relative;
+  min-width: 0;
+}
+
+.imagenOferta img {
+  display: block;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.descuento {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 9px 12px;
+  background: #ff4f9a;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.infoOferta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px;
+  padding: 10px;
+}
+
+.infoOferta h3 {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.textoOferta {
+  color: #c0bfd2;
+  line-height: 1.8;
+}
+
+.precioOferta {
+  color: #ff72bc;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.detalleCuotas {
+  color: #c0bfd2;
+  font-size: 13px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: #ff4f9a;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #db3180;
+  transform: translateY(-2px);
+}
+
+/* FRASE FINAL */
+
+.fraseFinal {
+  padding: 65px 20px;
+  text-align: center;
+  background: linear-gradient(120deg, #171528, #10232d, #26162f);
+}
+
+.simboloFinal {
+  color: #32c5ff;
+  font-size: 40px;
+}
+
+.fraseFinal h2 {
+  margin: 18px 0;
+  font-size: clamp(22px, 4vw, 34px);
+}
+
+.fraseFinal h2 span {
+  color: #32c5ff;
+}
+
+.fraseFinal p {
+  color: #b6b6c9;
+  font-size: 14px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+  padding: 25px 15px;
+  background: #08080e;
+  color: #aaaabe;
+  text-align: center;
+  font-size: 12px;
+  line-height: 2;
+  border-top: 1px solid #292938;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 800px) {
+  header {
+    padding: 18px 5%;
+  }
+
+  .marca h1 {
+    font-size: 23px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .portada {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 50px 6%;
+  }
+
+  .imagenPortada img {
+    height: 320px;
+  }
+
+  .grillaProductos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .tarjetaOferta {
+    gap: 20px;
+    padding: 18px;
+  }
+
+  .imagenOferta img {
+    height: 280px;
+  }
+
+  .infoOferta h3 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 520px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav ul {
+    gap: 35px;
+  }
+
+  .portada {
+    padding: 40px 6%;
+  }
+
+  .imagenPortada img {
+    height: 260px;
+  }
+
+  #productos,
+  #oferta {
+    padding: 30px 5%;
+  }
+
+  #productos h2,
+  .encabezadoOferta h2 {
+    font-size: 27px;
+  }
+
+  .grillaProductos {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .imagenProducto {
+    height: 270px;
+  }
+
+  .tarjetaOferta {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .imagenOferta img {
+    height: 260px;
+  }
+
+  .infoOferta {
+    padding: 8px 2px;
+  }
+
+  .fraseFinal {
+    padding: 45px 18px;
+  }
+}
